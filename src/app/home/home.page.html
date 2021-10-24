@@ -1,111 +1,116 @@
-<ion-header [translucent]="true">
-  <ion-toolbar color="medium">
-    <!-- <ion-title size="large" class="center">HOME </ion-title> -->
-        <ion-searchbar placeholder="Title, Author,ISBN"></ion-searchbar>
-    </ion-toolbar>
-</ion-header>
 
-<ion-toolbar>
-  <ion-buttons slot="start">
-    <ion-menu-button auto-hide="false"></ion-menu-button>
-  </ion-buttons>
-  <ion-buttons slot="primary">
-    <ion-button>
-      <ion-icon slot="icon-only" ios="ellipsis-horizontal" md="ellipsis-vertical"></ion-icon>
-    </ion-button>
-  </ion-buttons>
 
-  <ion-title>BOOKS THIS WEEK</ion-title>
-</ion-toolbar>
-<ion-content [fullscreen]="true">
-  <ion-card color=medium>
-    <ion-card-content class="ion-margin-top" style="padding-left: 2px;" class="mt-3">
-      <img src="assets\ChildrenOfRevolution.jpg" alt="" width="100" height="150">
-      <!-- <ion-title>ChildrenOfRevolution</ion-title> -->
-      <img src="assets\SAS-SecretWar.jpg" alt="" style="padding-left: 0px;" width="100" height="150">
-      <!-- <ion-label>SAS Secret War</ion-label> -->
-      <img src="assets\ForgiveForGood.jpg" alt="" style="padding-left: 0px;" width="100" height="150">
-      <!-- <ion-label>Forgive for good</ion-label> -->
-    </ion-card-content>
-    <ion-button fill="block" color=primary text-center>Click for more</ion-button>
-   </ion-card>
+<ion-header >
+    <ion-toolbar color="medium">
+      <!-- <ion-title size="large" class="center">HOME </ion-title> -->
+          <ion-searchbar placeholder="Title, Author,ISBN"></ion-searchbar>
+      </ion-toolbar>
+  </ion-header>
+  
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button auto-hide="false"></ion-menu-button>
+    </ion-buttons>
+  
+    <ion-title>BOOKS THIS WEEK</ion-title>
+  </ion-toolbar>
+  <ion-content [fullscreen]="true">
+    <ion-card color=medium >
+      <ion-card-content class="ion-align-items-center" style="padding-left: 20px;" class="mt-3">
+        <ion-grid>
+  <ion-row class="header ion-align-items-center">
+        <img src="assets\ChildrenOfRevolution.jpg" alt="" style="padding-left: 20px;" width="170" height="200">
+        <!-- <ion-title>ChildrenOfRevolution</ion-title> -->
+        <img src="assets\SAS-SecretWar.jpg" alt="" style="padding-left: 30px;" width="170" height="200">
+        <!-- <ion-label>SAS Secret War</ion-label> -->
+        <img src="assets\ForgiveForGood.jpg" alt="" style="padding-left: 30px;" width="170" height="200">
+        <img src="assets\The Rosedale Diet.jpeg" alt="" style="padding-left: 30px;" width="170" height="200">
+      </ion-row>
+        <!-- <ion-label>Forgive for good</ion-label> -->
+        <ion-button fill="block" color=primary text-center>Click for more</ion-button>
+  
+      </ion-grid>
+      </ion-card-content>
+  
+     </ion-card>
+    </ion-content>
+  <ion-content>
+    <ion-grid>
+      <ion-row  class="header ion-align-items-center">
+        <ion-col class="ion-align-items-center" size-md=2 offset-md=1 >
+          <ion-card color="dark" (click)="redirectList()">
+            <ion-card-header>
+              <ion-card-title text-center >Happy </ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+        </ion-card-content>
+          </ion-card>
+          <!-- <ion-button (click)="onChangeText()" fill ="solid" size=large color="warning" >Sad</ion-button> -->
+        </ion-col>
+        <ion-col class= "ion-align-items-center" size-md=2 offset-md=1>
+          <ion-card color="dark" (click)="redirectList()">
+            <ion-card-header>
+              <ion-card-title text-center >Sad </ion-card-title>
+            </ion-card-header>
+          </ion-card>
+          <!-- <ion-button (click)="onChangeText()" fill ="solid" size=large color="warning" >Sad</ion-button> -->
+        </ion-col>
+        <ion-col class="ion-align-items-center" size-md=2 offset-md=1>
+          <ion-card color="dark" (click)="redirectList()">
+            <ion-card-header>
+              <ion-card-title text-center> Angry </ion-card-title>
+            </ion-card-header>
+          </ion-card>
+          <!-- <ion-button (click)="onChangeText()" fill ="solid" size=large color="warning" >Sad</ion-button> -->
+        </ion-col>
+        <!-- <ion-col size=4>
+              <ion-button (click)="onChangeText()" fill ="solid" size=large color="danger">Angry</ion-button>
+            </ion-col>
+        <ion-col size=4>
+           <ion-button (click)="onChangeText()" fill="solid" size=large color="tertiary">Calm</ion-button>
+          </ion-col> -->
+      </ion-row>
+      <ion-row class="ion-align-items-center">
+        <ion-col class="ion-align-items-center" size-md=2 offset-md=1>
+          <ion-card color="dark" class="pointer"  (click)="redirectList()">
+            <ion-card-header>
+              <ion-card-title text-center position=floating >Calm </ion-card-title>
+            </ion-card-header>
+          </ion-card>
+          <!-- <ion-button (click)="onChangeText()" fill ="solid" size=large color="warning" >Sad</ion-button> -->
+        </ion-col>
+        <ion-col class="ion-align-items-center" size-md=2 offset-md=1>
+          <ion-card color="dark" class="pointer" (click)="redirectList()">
+            <ion-card-header>
+              <ion-card-title text-center position=floating >Joy </ion-card-title>
+            </ion-card-header>
+          </ion-card>
+          <!-- <ion-button (click)="onChangeText()" fill ="solid" size=large color="warning" >Sad</ion-button> -->
+        </ion-col>
+        <ion-col class="ion-align-items-center" size-md=2 offset-md=1>
+          <ion-card color="dark" class="pointer" (click)="redirectList()">
+            <ion-card-header>
+              <ion-card-title text-center position=floating >Fear </ion-card-title>
+            </ion-card-header>
+          </ion-card>
+          <!-- <ion-button (click)="onChangeText()" fill ="solid" size=large color="warning" >Sad</ion-button> -->
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  
+     <!-- <ion-button (click)="onChangeText()" fill="solid" size=large color="medium"  style="padding-left: 0px;" >Happy</ion-button>
+  
+     <ion-button (click)="onChangeText()" fill ="solid" size=large color="warning" >Sad</ion-button>
+     <ion-button (click)="onChangeText()" fill ="solid" size=large color="danger" >Angry</ion-button>
+     <ion-button (click)="onChangeText()" fill="solid" size=large color="success"  >Calm</ion-button>
+     <ion-button (click)="onChangeText()" fill ="solid" size=large color="tertiary" >Joy</ion-button>
+     <ion-button (click)="onChangeText()" fill ="solid" size=large color="light" >Fear</ion-button> -->
+  
+  
+    <!-- <div id="container">
+      <strong></strong>
+      <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+    </div> -->
   </ion-content>
-<ion-content>
-  <ion-grid>
-    <ion-row>
-      <ion-col size-md=4 offset-md=2 (click)="redirectList()">
-        <ion-card color="medium">
-          <ion-card-header>
-            <ion-card-title text-center position=floating class="pointer">Happy </ion-card-title>
-          </ion-card-header>
-          <ion-card-content>
-
-          </ion-card-content>
-        </ion-card>
-        <!-- <ion-button (click)="onChangeText()" fill ="solid" size=large color="warning" >Sad</ion-button> -->
-      </ion-col>
-      <ion-col size-md=4 offset-md=2>
-        <ion-card color="medium">
-          <ion-card-header>
-            <ion-card-title text-center position=floating >Sad </ion-card-title>
-          </ion-card-header>
-        </ion-card>
-        <!-- <ion-button (click)="onChangeText()" fill ="solid" size=large color="warning" >Sad</ion-button> -->
-      </ion-col>
-      <ion-col size-md=4 offset-md=2>
-        <ion-card color="medium">
-          <ion-card-header>
-            <ion-card-title text-center position=floating >Angry </ion-card-title>
-          </ion-card-header>
-        </ion-card>
-        <!-- <ion-button (click)="onChangeText()" fill ="solid" size=large color="warning" >Sad</ion-button> -->
-      </ion-col>
-      <!-- <ion-col size=4>
-            <ion-button (click)="onChangeText()" fill ="solid" size=large color="danger">Angry</ion-button>
-          </ion-col>
-      <ion-col size=4>
-         <ion-button (click)="onChangeText()" fill="solid" size=large color="tertiary">Calm</ion-button>
-        </ion-col> -->
-    </ion-row>
-    <ion-row>
-      <ion-col size-md=4 offset-md=2>
-        <ion-card color="medium">
-          <ion-card-header>
-            <ion-card-title text-center position=floating >Calm </ion-card-title>
-          </ion-card-header>
-        </ion-card>
-        <!-- <ion-button (click)="onChangeText()" fill ="solid" size=large color="warning" >Sad</ion-button> -->
-      </ion-col>
-      <ion-col size-md=4 offset-md=2>
-        <ion-card color="medium">
-          <ion-card-header>
-            <ion-card-title text-center position=floating >Joy </ion-card-title>
-          </ion-card-header>
-        </ion-card>
-        <!-- <ion-button (click)="onChangeText()" fill ="solid" size=large color="warning" >Sad</ion-button> -->
-      </ion-col>
-      <ion-col size-md=4 offset-md=2>
-        <ion-card color="medium">
-          <ion-card-header>
-            <ion-card-title text-center position=floating >Fear </ion-card-title>
-          </ion-card-header>
-        </ion-card>
-        <!-- <ion-button (click)="onChangeText()" fill ="solid" size=large color="warning" >Sad</ion-button> -->
-      </ion-col>
-    </ion-row>
-  </ion-grid>
-
-   <!-- <ion-button (click)="onChangeText()" fill="solid" size=large color="medium"  style="padding-left: 0px;" >Happy</ion-button>
-
-   <ion-button (click)="onChangeText()" fill ="solid" size=large color="warning" >Sad</ion-button>
-   <ion-button (click)="onChangeText()" fill ="solid" size=large color="danger" >Angry</ion-button>
-   <ion-button (click)="onChangeText()" fill="solid" size=large color="success"  >Calm</ion-button>
-   <ion-button (click)="onChangeText()" fill ="solid" size=large color="tertiary" >Joy</ion-button>
-   <ion-button (click)="onChangeText()" fill ="solid" size=large color="light" >Fear</ion-button> -->
-
-
-  <!-- <div id="container">
-    <strong></strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div> -->
-</ion-content>
+  
+  
