@@ -16,51 +16,24 @@ export class RegisterPage implements OnInit {
     ngOnInit() {
     }
 
-    registerForm = new FormGroup({
-        user_name: new FormControl('',[Validators.required]),
-        email: new FormControl('',[Validators.required,Validators.email]),
-        password: new FormControl('',[Validators.required,Validators.minLength(6)])
-    })
-
-    get user_name(){
-        return this.registerForm.get('user_name')
-    }
-
-    get email(){
-        return this.registerForm.get('email')
-    }
-
-    get password(){
-        return this.registerForm.get('password')
-    }
+    user_name:string = ''
+    email:string = ''
+    password:string = ''
 
     async onSubmit(){
-        try{
-            // this.authService.saveUser(this.registerForm.value).subscribe((response)=>{
-            //     console.log(response)
-            //     try{
-            //         Swal.fire({
-            //             icon: 'success',
-            //             text: 'User Saved Successfully',
-            //         })
-            //         setTimeout(() => {
-            //             this.router.navigate([''])
-            //         }, 2000);
-            //     }
-            //     catch(error){
-            //         Swal.fire({
-            //             icon: 'error',
-            //             text: 'User Registration Failed',
-            //         })
-            //     }
-            // })
-        }
-        catch(error){
-            Swal.fire({
-                icon: 'error',
-                text: 'User Registration Failed',
-            })
-        }
-    }
-
+        let data:any = [{
+            user_name: this.user_name,
+            email: this.email,
+            password: this.password
+        }]
+        localStorage.setItem("user_list",JSON.stringify(data))
+        Swal.fire({
+            icon: 'success',
+            text: 'User Registered Successfully',
+        }).then((result) => {
+            if(result){
+                this.router.navigate([''])
+            }
+        }) 
+    }    
 }

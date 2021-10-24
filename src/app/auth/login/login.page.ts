@@ -11,51 +11,36 @@ import Swal from 'sweetalert2'
 })
 export class LoginPage implements OnInit {
 
-  constructor(private  authService:  RegisterService, private  router:  Router) { }
+    constructor(private  authService:  RegisterService, private  router:  Router) { }
 
-  ngOnInit() {
-  }
+    ngOnInit() {
+    }
 
-  loginForm = new FormGroup({
-      email: new FormControl('',[Validators.required,Validators.email]),
-      password: new FormControl('',[Validators.required,Validators.minLength(6)])
-  })
+    email:string = ''
+    password:string = ''
 
-  get email(){
-      return this.loginForm.get('email')
-  }
-
-  get password(){
-      return this.loginForm.get('password')
-  }
-
-  async onSubmit(){
-    try{
-        // this.authService.saveUser(this.registerForm.value).subscribe((response)=>{
-        //     console.log(response)
-        //     try{
-        //         Swal.fire({
-        //             icon: 'success',
-        //             text: 'User Saved Successfully',
-        //         })
-        //         setTimeout(() => {
+    async onSubmit(){
+        let data:any = JSON.parse(localStorage.getItem("user_list"))
+        if(data){
+            data.filter(x => {
+                if(x.email === this.email && x.password === this.password){
                     this.router.navigate(['home'])
-        //         }, 2000);
-        //     }
-        //     catch(error){
-        //         Swal.fire({
-        //             icon: 'error',
-        //             text: 'User Registration Failed',
-        //         })
-        //     }
-        // })
+                }
+                else{
+                    Swal.fire({
+                        icon: 'error',
+                        text: 'Incorrect Email or Password',
+                    })
+                }
+            })
+        }
+        else{
+            Swal.fire({
+                icon: 'error',
+                text: 'User is not Registered',
+            })
+            this.email = ''
+            this.password = ''
+        }
     }
-    catch(error){
-        Swal.fire({
-            icon: 'error',
-            text: 'User Login Failed',
-        })
-    }
-}
-
-}
+}   
