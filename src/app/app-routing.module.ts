@@ -17,9 +17,12 @@ const routes: Routes = [
     loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
   },
   {
-    path: '',
-    redirectTo: 'home',
-    pathMatch: 'full'
+    path: 'list',
+    loadChildren: () => import('./list/list.module').then( m => m.ListPageModule)
+  },
+  {
+    path: 'recommendation',
+    loadChildren: () => import('./recommendation/recommendation.module').then( m => m.RecommendationPageModule)
   },
 ];
 @NgModule({

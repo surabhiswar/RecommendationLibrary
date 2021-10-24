@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {Router} from '@angular/router'
 
 @Component({
   selector: 'app-home',
@@ -7,9 +8,12 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
-  constructor() {}
+  constructor(private  router:  Router) {}
   text="This library is mood based recommendation Library";
   onChangeText(){
-      this.text="Changed";
+    this.text="Changed";
+  }
+   redirectList(){
+      this.router.navigate(['list'])
    }
 }
