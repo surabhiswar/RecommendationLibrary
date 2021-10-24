@@ -24,6 +24,7 @@ export class LoginPage implements OnInit {
         if(data){
             data.filter(x => {
                 if(x.email === this.email && x.password === this.password){
+                    localStorage.setItem("get_loggedin_user",JSON.stringify(x))
                     this.router.navigate(['home'])
                 }
                 else{
